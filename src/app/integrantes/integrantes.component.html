@@ -1,1 +1,13 @@
-<p>integrantes works!</p>
+<app-menu></app-menu>
+
+<div class="container">
+    <div class="row row-cols-12 row-cols-md-12">
+       <h1 class="border-bottom p-4">Integrantes</h1>
+</div>
+
+<div class="row row-cols-12 row-cols-md-4 w-100">
+    <div class="col mx-auto d-block m-xxl-auto" *ngFor="let integrante of integrantes">
+           <img src="{{integrante.foto}}" alt="" class="img-fluid w-100 h-100 m-2 p-3">
+           <h1 class="m-2 p-2">{{integrante.nombre}}</h1>
+    </div>
+</div>
