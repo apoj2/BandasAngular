@@ -1,17 +1,18 @@
+<app-menu></app-menu>
 <section>
   <div class="container">
-    <div class="row w-100">
+    <div class="row row-cols-12 row-cols-md-12 w-100">
         <div class="col">
           <h3 class="border-bottom p-4">Historia</h3>
         </div>
     </div>
     <div class="row w-100 row-cols-12 row-cols-md-2 my-5 shadow p-4">
-      <div class="col col-md-6 shadow p-4 ">
-          <div class="row">
-            <div class="col col-md-12">
+      <div class="col col-12 col-md-6 shadow p-4 ">
+          <div class="row row-cols-12 row-cols-md-12">
+            <div class="col col-12 col-md-12">
               <h3 class="border p-4">Vacations</h3>
             </div>
-            <div class="col col-md-12">
+            <div class="col col-12 col-md-12">
               <p>Vacations se formó en Newcastle, Australia, y actualmente cuenta con Campbell Burns (vocalista y guitarrista), Jake Johnson (bajista), Nate Delizzotti (guitarrista) y Joseph Van Lier (baterista) como sus integrantes. Sin embargo, la historia de esta banda no inició con estos integrantes, de hecho el frontman del grupo fue quien inició componiendo rolas en la intimidad de su cuarto cuando apenas era un joven que simplemente quería hacer música.
                 <br><br>
                           “Tenía entre 17 o 18 años cuando empecé a componer y grabar canciones en mi cuarto, con un equipo sumamente primitivo y barato porque era lo que podía comprar en ese momento. Eran micrófonos de pésima calidad y mi guitarra era una porquería, pero gracias a ellos pude hacer canciones e incluso las publiqué en mi cuenta de Tumblr.
@@ -22,16 +23,28 @@
             </div>
           </div>
       </div>
-      <div class="col col-md-6">
-        <div class="row">
-          <div class="col col-md-12 p-2">
+      <div class="col col-12 col-md-6">
+        <div class="row row-cols-12 row-cols-md-12">
+          <div class="col col-12 col-md-12 p-2">
             <img src="https://firebasestorage.googleapis.com/v0/b/apojtiendatcc.appspot.com/o/0f8ff8c7cc38cb5c6b2bb11d4654ffaa.jpg?alt=media&token=7f201374-926d-4337-b3ae-8cb36e44b84b" class="img-fluid w-100 mx-auto m-xxl-auto d-block" alt="" srcset="">
           </div>
-          <div class="col col-md-12 p-2">
+          <div class="col col-12 col-md-12 p-2">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/NM-VWHP-cWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class="mx-auto m-xxl-auto d-block" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
   </div>
+</section>
+
+<section class="container">
+      <div class="row d-flex ">
+        <div class="col-12 col-md-4 p-4 mt-5" *ngFor="let cancion of canciones">
+          <div class="card mx-2">
+            <img src="{{cancion.album.images[0].url}}" alt="" class="img-fluid w-100">
+            <h1 class="text-center">{{cancion.name}}</h1>
+            <audio class="mx-auto d-block m-xxl-auto" src="{{cancion.preview_url}}" controls></audio>
+          </div>
+        </div>
+      </div>
 </section>
